@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #horizontalSlider *{
+        #horizontalSlider * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         #horizontalSlider {
+            box-sizing: border-box;
+            overflow: hidden;
             width: 100%;
             max-width: 100%;
             padding: 10px;
@@ -22,118 +25,187 @@
         .sliderWrapper {
             width: 100%;
             max-width: 1200px;
-            display: flex;
             padding: 10px;
+            display: flex;
+            gap: 10px;
         }
 
         .slideCard {
             position: relative;
             width: 20%;
-            max-width: 500px;
+            max-width: 600px;
             height: 300px;
             padding: 10px !important;
             margin-right: 10px;
+            border-radius: 16px;
             background: bisque;
             transition: all 0.3s ease;
             background-image: url('/pic1.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center center;
+            background-repeat: no-repeat;
             display: flex;
             align-items: end;
             justify-content: start;
             overflow: hidden;
-            transform-origin: right top;
-        }
-        .slideCard:nth-child(2){
-            background-image: url('/pic2.jpg');
-        }
-        .slideCard:nth-child(3){
-            background-image: url('/pic3.jpg');
         }
 
-        .slideCard:hover{
+        .slideCard:first-child {
+            background: #00ffd5;
+            background-image: url('https://laurent.livewebsite.space/wp-content/uploads/2025/12/glasses-4704055_1280.jpg');
+        }
+
+        .slideCard:nth-child(2) {
+            background: red;
+            background-image: url('https://laurent.livewebsite.space/wp-content/uploads/2025/12/books-7744938_1280.jpg');
+        }
+
+        .slideCard:nth-child(3) {
+            background: yellow;
+            background-image: url('https://laurent.livewebsite.space/wp-content/uploads/2025/12/boy-5731001_1280.jpg');
+        }
+
+        .slideCard:nth-child(4) {
+            background: green;
+            background-image: url('https://laurent.livewebsite.space/wp-content/uploads/2025/12/coffee-2511065_1280.jpg');
+        }
+
+        .slideCard:nth-child(5) {
+            background: purple;
+            background-image: url('https://laurent.livewebsite.space/wp-content/uploads/2025/12/man-7795548_1280.jpg');
+        }
+
+        .slideCard:hover {
             flex-grow: 1;
             width: 100% !important;
         }
-         .slideTextContent{
+
+        .slideTextContent {
             width: 100%;
+            max-width: 500px;
             height: fit-content;
             opacity: 0;
-            transform: translateY(100px);
+            transform: translateY(80px);
             transition: all 0.1s ease;
             transition-delay: 0.1s;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: end;
         }
-        .slideTextContent h2 {
-            width: 50%;
-            padding: 5px 10px !important;
-            margin-bottom: 12px !important;
-            font-size: 1.5rem;
+
+        .slideText {
+            width: 70%;
+        }
+
+        .slideTextContent .slideText h2 {
+            font-size: 1.3rem;
             color: #ffffff;
-            background-color: #333333c7;
-            
         }
-        .slideTextContent p {
-            width: 75%;
+
+        .slideTextContent .slideText p {
             font-size: 1rem;
-            padding: 5px 10px !important;
-            color: #000000;
-             background-color: #f1f1f138;
+            color: #ffffff;
         }
-        .slideCard:hover{
+
+        .slideButton {
+            background-color: #ffffff;
+            border: none;
+            padding: 8px 20px !important;
+            border-radius: 20px;
+        }
+
+        .slideCard:hover {
             flex-grow: 1;
             width: 100% !important;
         }
-        .slideCard:hover .slideTextContent{
+
+        .slideCard:hover .slideTextContent {
             opacity: 1;
             transform: translateY(0);
         }
-       
+
+        .activeCard {
+            flex-grow: 1;
+            width: 100% !important;
+        }
+
+        @media (max-width: 768px) {
+            .slideTextContent {
+                gap: 5px;
+                flex-direction: column;
+                justify-content: start;
+                align-items: start;
+            }
+
+            .slideText {
+                width: 100%;
+                border: 1px solid blue;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div id="horizontalSlider">
         <div class="sliderWrapper">
-
             <div class="slideCard">
                 <div class="slideTextContent">
-                    <h2>Slide 1</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores placeat quibusdam tenetur!</p>
+                    <div class="slideText">
+                        <h2>Slide 1</h2>
+                        <p>This is the first slide.</p>
+                    </div>
+                    <button class="slideButton">Learn More</button>
+                </div>
+            </div>
+            <div class="slideCard activeCard">
+                <div class="slideTextContent">
+                    <div class="slideText">
+                        <h2>Slide 2</h2>
+                        <p>This is the second slide.</p>
+                    </div>
+                    <button class="slideButton">Learn More</button>
                 </div>
             </div>
             <div class="slideCard">
                 <div class="slideTextContent">
-                    <h2>Slide 1</h2>
-                    <p>This is the first slide.</p>
+                    <div class="slideText">
+                        <h2>Slide 3</h2>
+                        <p>This is the third slide.</p>
+                    </div>
+                    <button class="slideButton">Learn More</button>
                 </div>
             </div>
             <div class="slideCard">
                 <div class="slideTextContent">
-                    <h2>Slide 1</h2>
-                    <p>This is the first slide.</p>
+                    <div class="slideText">
+                        <h2>Slide 4</h2>
+                        <p>This is the fourth slide.</p>
+                    </div>
+                    <button class="slideButton">Learn More</button>
                 </div>
             </div>
             <div class="slideCard">
                 <div class="slideTextContent">
-                    <h2>Slide 1</h2>
-                    <p>This is the first slide.</p>
+                    <div class="slideText">
+                        <h2>Slide 5</h2>
+                        <p>This is the fifth slide.</p>
+                    </div>
+                    <button class="slideButton">Learn More</button>
                 </div>
             </div>
-            <div class="slideCard">
-                <div class="slideTextContent">
-                    <h2>Slide 1</h2>
-                    <p>This is the first slide.</p>
-                </div>
-            </div>
-            <div class="slideCard">
-                <div class="slideTextContent">
-                    <h2>Slide 1</h2>
-                    <p>This is the first slide.</p>
-                </div>
-            </div>
-
         </div>
     </div>
+    <!-- ====script==== -->
+    <script>
+        const slideCards = document.querySelectorAll('.slideCard');
+        slideCards.forEach((card) => {
+            card.addEventListener('mouseenter', () => {
+                slideCards.forEach(c => c.classList.remove('activeCard'));
+                card.classList.add('activeCard');
+            });
+        });
+    </script>
 </body>
 
 </html>
