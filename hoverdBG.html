@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1f1f1f;
+            --accent-blue: #4285f4;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Google Sans', Arial, sans-serif;
+            background-color: var(--bg-color);
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            pointer-events: none; /* Allows mouse to pass through to canvas */
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 500;
+            margin: 0;
+            letter-spacing: -2px;
+            color: var(--text-color);
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #5f6368;
+            margin-top: 10px;
+        }
+
+        .cta {
+            margin-top: 40px;
+            pointer-events: auto;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            background: #000;
+            color: #fff;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="canvas"></canvas>
+
+    <div class="content">
+        <h1>Antigravity</h1>
+        <p>The future of coding is weightless.</p>
+        <div class="cta">
+            <a href="#" class="btn">I am a Candidate</a>
+            <a href="/employer" class="btn">I am an Employer</a>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height, particles;
+        const particleDistance = 20;
+        const mouse = { x: -100, y: -100, radius: 350 };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        function init() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+
+            // Create a grid of particles
+            for (let y = 0; y < height; y += particleDistance) {
+                for (let x = 0; x < width; x += particleDistance) {
+                    particles.push(new Particle(x, y));
+                }
+            }
+        }
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.baseX = x;
+                this.baseY = y;
+                // Randomize color slightly (Blue and Dark Grey)
+                this.color = Math.random() > 0.8 ? '#4285f4' : '#dadce0';
+                this.size = 2;
+            }
+
+            draw() {
+                ctx.beginPath();
+                // Draw as a dash
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(this.x + 2, this.y + 2);
+                ctx.strokeStyle = this.color;
+                ctx.lineWidth = 2;
+                ctx.lineCap = 'round';
+                ctx.stroke();
+            }
+
+            update() {
+                let time = Date.now() * 0.001;
+                let waveX = Math.sin(time + (this.baseY / 100)) * 10;
+                let waveY = Math.cos(time + (this.baseX / 100)) * 10;
+
+                let targetX = this.baseX + waveX;
+                let targetY = this.baseY + waveY;
+
+                // Mouse Interaction (Push effect)
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < mouse.radius) {
+                    let force = (mouse.radius - distance) / mouse.radius;
+                    let directionX = dx / distance;
+                    let directionY = dy / distance;
+                    targetX += directionX * force * 50;
+                    targetY += directionY * force * 50;
+                }
+
+                // Smooth easing back to position
+                this.x += (targetX - this.x) * 0.3;
+                this.y += (targetY - this.y) * 0.3;
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', init);
+
+        init();
+        animate();
+    </script>
+</body>
+</html>

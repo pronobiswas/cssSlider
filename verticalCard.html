@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #horizontalSlider *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #horizontalSlider {
+            width: 100%;
+            max-width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sliderWrapper {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            padding: 10px;
+        }
+
+        .slideCard {
+            position: relative;
+            width: 20%;
+            max-width: 500px;
+            height: 300px;
+            padding: 10px !important;
+            margin-right: 10px;
+            background: bisque;
+            transition: all 0.3s ease;
+            background-image: url('/pic1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: end;
+            justify-content: start;
+            overflow: hidden;
+            transform-origin: right top;
+        }
+        .slideCard:nth-child(2){
+            background-image: url('/pic2.jpg');
+        }
+        .slideCard:nth-child(3){
+            background-image: url('/pic3.jpg');
+        }
+
+        .slideCard:hover{
+            flex-grow: 1;
+            width: 100% !important;
+        }
+         .slideTextContent{
+            width: 100%;
+            height: fit-content;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.1s ease;
+            transition-delay: 0.1s;
+        }
+        .slideTextContent h2 {
+            width: 50%;
+            padding: 5px 10px !important;
+            margin-bottom: 12px !important;
+            font-size: 1.5rem;
+            color: #ffffff;
+            background-color: #333333c7;
+            
+        }
+        .slideTextContent p {
+            width: 75%;
+            font-size: 1rem;
+            padding: 5px 10px !important;
+            color: #000000;
+             background-color: #f1f1f138;
+        }
+        .slideCard:hover{
+            flex-grow: 1;
+            width: 100% !important;
+        }
+        .slideCard:hover .slideTextContent{
+            opacity: 1;
+            transform: translateY(0);
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div id="horizontalSlider">
+        <div class="sliderWrapper">
+
+            <div class="slideCard">
+                <div class="slideTextContent">
+                    <h2>Slide 1</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores placeat quibusdam tenetur!</p>
+                </div>
+            </div>
+            <div class="slideCard">
+                <div class="slideTextContent">
+                    <h2>Slide 1</h2>
+                    <p>This is the first slide.</p>
+                </div>
+            </div>
+            <div class="slideCard">
+                <div class="slideTextContent">
+                    <h2>Slide 1</h2>
+                    <p>This is the first slide.</p>
+                </div>
+            </div>
+            <div class="slideCard">
+                <div class="slideTextContent">
+                    <h2>Slide 1</h2>
+                    <p>This is the first slide.</p>
+                </div>
+            </div>
+            <div class="slideCard">
+                <div class="slideTextContent">
+                    <h2>Slide 1</h2>
+                    <p>This is the first slide.</p>
+                </div>
+            </div>
+            <div class="slideCard">
+                <div class="slideTextContent">
+                    <h2>Slide 1</h2>
+                    <p>This is the first slide.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -112,6 +112,28 @@
             color: #666;
             font-weight: 500;
         }
+        @media (max-width: 768px) {
+            .carousel-card {
+                width: 160px;
+                height: 80px;
+                padding: 20px;
+            }
+
+            .card-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 2rem;
+            }
+
+            .card-title {
+                font-size: 1.2rem;
+                margin-bottom: 8px;
+            }
+
+            .card-number {
+                font-size: 0.9rem;
+            }
+        }
 
         /* Gradient overlays for smooth edges */
         .carousel-wrapper::before,
@@ -127,12 +149,12 @@
 
         .carousel-wrapper::before {
             left: 0;
-            background: linear-gradient(to right, #00000000, transparent);
+            background: linear-gradient(to right, #0000004d, transparent);
         }
 
         .carousel-wrapper::after {
             right: 0;
-            background: linear-gradient(to left, #00000000, transparent);
+            background: linear-gradient(to left, #00000077, transparent);
         }
 
     </style>
