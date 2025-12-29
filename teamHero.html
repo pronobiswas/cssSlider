@@ -76,7 +76,6 @@
     #style21 .proWraper figure .personImg {
         width: 100%;
         height: 100%;
-        object-fit: cover;
         border-radius: 50%;
         margin: 0 auto ;
         z-index: 12;
@@ -86,7 +85,30 @@
         z-index: 12;
         transition: 0.2s all linear;
     }
-
+    #style21 .proWraper figure .personImg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0 auto ;
+        z-index: 12;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 12;
+        transition: 0.2s all linear;
+    }
+    #style21 .proWraper figure .personImg::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 14;
+    }
     #style21 .proWraper figure .social {
         position: absolute;
         top: 50px;
@@ -147,12 +169,15 @@
         color: #91ca30;
         text-transform: uppercase;
         text-align: center;
+        font-family: 'Google Sans', sans-serif;
     }
 
     .proDesc .deg {
         font-size: 14px;
         font-weight: normal;
         color: #91ca30;
+        text-transform: uppercase;
+        font-family: 'Google Sans', sans-serif;
     }
 
     @keyframes animRotate {
@@ -170,177 +195,203 @@
     <div class="proWraper">
         <div class="proRow">
             <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">SAN MAHAJAN</span>
                     <span class="deg">Founder &ceo</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_San-1.jpg" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_San-1.jpg" alt="person" >
+                </div>
             </figure>
             <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">Director International Recruitment</span>
                     <span class="deg">tim lilleyman</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/TIM-500x500-1.jpg" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/TIM-500x500-1.jpg" alt="person">
+                </div>
             </figure>
             <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">director,operation</span>
                     <span class="deg">shivani shing</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_Shivani-500x500-1.jpg" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_Shivani-500x500-1.jpg" alt="person" >
+                </div>
             </figure>
             <!-- --- -->
             <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">Director, creative</span>
                     <span class="deg">malithi suharshi</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/malithi_suharshi-500x500-1.png" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/malithi_suharshi-500x500-1.png" alt="person" >
+                </div>
             </figure>
              <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">head, account</span>
                     <span class="deg">neelam ilyas</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_Neelam-500x500-1.jpg" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_Neelam-500x500-1.jpg" alt="person" >
+                </div>
             </figure>
             <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">manager, client information</span>
                     <span class="deg">sammy singh</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_-Sammy.jpg" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_-Sammy.jpg" alt="person" >
+                </div>
             </figure>
              <!-- --- -->
             <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">Director, lmia processing</span>
                     <span class="deg">mariam b</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/Mariam_bi-2-500x500-1.png" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/Mariam_bi-2-500x500-1.png" alt="person" >
+                </div>
             </figure>
              <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">manager, legal services</span>
                     <span class="deg">komalpreet kaur</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/Untitled-design-30.jpg" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/Untitled-design-30.jpg" alt="person" >
+                </div>
             </figure>
             <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">manager, human resources</span>
                     <span class="deg">sparsh sundha</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/IMG_0517-1.jpg" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/IMG_0517-1.jpg" alt="person" >
+                </div>
             </figure>
             <!-- --- -->
             <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">manager, client information</span>
                     <span class="deg">kavithi sulakshi</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_-Kavithi-1.png" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_-Kavithi-1.png" alt="person" >
+                </div>
             </figure>
              <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">manager, legal services</span>
                     <span class="deg">aastha</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_-Aastha.jpg" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_-Aastha.jpg" alt="person" >
+                </div>
             </figure>
             <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">team leader, legal</span>
                     <span class="deg">arshi pathan</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/Untitled-design-14-500x500-1.jpg" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/Untitled-design-14-500x500-1.jpg" alt="person" >
+                </div>
             </figure>
             <!-- --- -->
             <figure>
-                <div class="proDesc">
+                <figcaption class="proDesc">
                     <span class="title">specialist, video production</span>
                     <span class="deg">Amit kumar mahato</span>
-                </div>
+                </figcaption>
                 <div class="social">
                     <div class="icon"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
                     <div class="icon"><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></div>
                 </div>
-                <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_-Amit.jpg" alt="person" class="personImg">
+                <div class="personImg">
+                    <img src="https://laurent.livewebsite.space/wp-content/uploads/2025/12/AMK_Team_-Amit.jpg" alt="person" >
+                </div>
             </figure>
         </div>
     </div>
